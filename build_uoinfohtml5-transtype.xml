@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><project name="dita2uoinfohtml5" default="dita2uoinfohtml5">
+
+	<property name="transtype" value="uoinfohtml5"></property>
+
+	<condition property="html5.output.localbreadcrumb" value="TRUE">
+		  <not>
+        <isset property="html5.output.localbreadcrumb"></isset>
+      </not>
+	</condition>
+
+	<target name="dita2uoinfohtml5">
+
+		<antcall target="dita2uohtml5">
+			<param name="html5.navigation.markup" value="navigation-ico"></param>
+			<param name="html5.output.localbreadcrumb" value="TRUE"></param>
+			<!--param name="html5.prevent.copy.libs" value="yes" /-->
+
+		</antcall>
+
+	</target>
+
+</project>
