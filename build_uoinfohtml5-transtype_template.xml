@@ -2,18 +2,12 @@
 
 	<property name="transtype" value="uoinfohtml5"/>
 
-	<condition property="html5.output.localbreadcrumb" value="TRUE">
-		  <not>
-        <isset property="html5.output.localbreadcrumb" />
-      </not>
-	</condition>
-
 	<target name="dita2uoinfohtml5" xmlns:dita="http://dita-ot.sourceforge.net"
 		dita:extension="depends org.dita.dost.platform.InsertDependsAction">
 
 		<antcall target="dita2uohtml5">
 			<param name="html5.navigation.markup" value="navigation-ico"/>
-			<param name="html5.output.localbreadcrumb" value="TRUE"/>
+			<param name="html5.output.localbreadcrumb" value="FALSE"/>
 			<!--param name="html5.prevent.copy.libs" value="yes" /-->
 
 		</antcall>
